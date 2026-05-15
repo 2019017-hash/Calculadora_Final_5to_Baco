@@ -1,0 +1,38 @@
+cuerpo {
+ pantalla : flex ;
+ justificar-contenido : centro ;
+ alinear-elementos : centro ;
+ altura : 100vh ;
+ color de fondo : #001e34 ;
+ font-family : 'Times New Roman' , Times , serif ;
+ }
+ .calc-container {
+ ancho : 300px ;
+ color de fondo : #004365 ;
+ relleno : 20px ;
+ radio de borde : 20px ;
+ box-shadow : 0 0 20px rgba ( rgb ( 17 , 21 , 67 ), rgb ( 25 , 30 , 78 ), rgb ( 37 , 41 , 81 ), alpha );
+ color : #08112a ;
+ }
+
+ #calc-display {
+ ancho : 100% ;
+ altura : 60px ;
+ tamaño de fuente : 32px ;
+ alineación de texto : centro ;
+ margen inferior : 20px ;
+ relleno : 10px ;
+ box-sizing : border-box ;
+ borde : ninguno ;
+ radio de borde : 10px ;
+ color de fondo : #00b3e9 ;
+ color : #120913 ;
+ }
+
+ .calc-buttonss {
+ mostrar : cuadrícula ;
+ columnas-de-plantilla-de-cuadrícula : repetir ( 4 , 1fr );
+ espacio : 10px ;
+ }
+
+
