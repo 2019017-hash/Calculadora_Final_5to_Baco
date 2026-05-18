@@ -1,38 +1,140 @@
-cuerpo {
- pantalla : flex ;
- justificar-contenido : centro ;
- alinear-elementos : centro ;
- altura : 100vh ;
- color de fondo : #001e34 ;
- font-family : 'Times New Roman' , Times , serif ;
- }
- .calc-container {
- ancho : 300px ;
- color de fondo : #004365 ;
- relleno : 20px ;
- radio de borde : 20px ;
- box-shadow : 0 0 20px rgba ( rgb ( 17 , 21 , 67 ), rgb ( 25 , 30 , 78 ), rgb ( 37 , 41 , 81 ), alpha );
- color : #08112a ;
- }
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;600&display=swap');
 
- #calc-display {
- ancho : 100% ;
- altura : 60px ;
- tamaño de fuente : 32px ;
- alineación de texto : centro ;
- margen inferior : 20px ;
- relleno : 10px ;
- box-sizing : border-box ;
- borde : ninguno ;
- radio de borde : 10px ;
- color de fondo : #00b3e9 ;
- color : #120913 ;
- }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
- .calc-buttonss {
- mostrar : cuadrícula ;
- columnas-de-plantilla-de-cuadrícula : repetir ( 4 , 1fr );
- espacio : 10px ;
- }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #001e34;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 179, 233, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 67, 101, 0.4) 0%, transparent 50%);
+  font-family: 'Exo 2', sans-serif;
+}
+
+.calc-container {
+  width: 320px;
+  background: linear-gradient(145deg, #005a84, #003a5c);
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow:
+    0 0 40px rgba(0, 179, 233, 0.2),
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 179, 233, 0.2);
+}
+
+#calc-display {
+  width: 100%;
+  height: 70px;
+  font-size: 36px;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: right;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 14px;
+  background-color: #001e34;
+  color: #00e5ff;
+  letter-spacing: 2px;
+  box-shadow:
+    inset 0 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 179, 233, 0.1);
+  outline: none;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calc-buttons button {
+  padding: 16px 0;
+  font-size: 18px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #006b9e, #004f78);
+  color: #cceeff;
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.4),
+    -2px -2px 6px rgba(255, 255, 255, 0.05);
+  transition: all 0.12s ease;
+}
+
+.calc-buttons button:hover {
+  background: linear-gradient(145deg, #0089c8, #005f90);
+  color: #ffffff;
+  box-shadow:
+    4px 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 14px rgba(0, 179, 233, 0.3);
+  transform: translateY(-1px);
+}
+
+.calc-buttons button:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Operadores */
+.btn-op {
+  background: linear-gradient(145deg, #0097b2, #006f85) !important;
+  color: #ffffff !important;
+}
+
+.btn-op:hover {
+  background: linear-gradient(145deg, #00b8d9, #0088a3) !important;
+}
+
+/* Botón C */
+.btn-clear {
+  background: linear-gradient(145deg, #c0392b, #962d22) !important;
+  color: #ffffff !important;
+}
+
+.btn-clear:hover {
+  background: linear-gradient(145deg, #e74c3c, #c0392b) !important;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.5), 0 0 14px rgba(231, 76, 60, 0.4) !important;
+}
+
+/* Botón = */
+#calc-evaluate {
+  background: linear-gradient(145deg, #00b3e9, #007bb5);
+  color: #001e34;
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.4), 0 0 20px rgba(0, 179, 233, 0.4);
+}
+
+#calc-evaluate:hover {
+  background: linear-gradient(145deg, #33c9f0, #009ed4) !important;
+  box-shadow: 4px 4px 14px rgba(0,0,0,0.5), 0 0 28px rgba(0, 229, 255, 0.5) !important;
+  color: #001e34 !important;
+}
+
+body > div:last-of-type p {
+  margin-top: 20px;
+  color: rgba(0, 179, 233, 0.4);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(0, 179, 233, 0.25);
+  font-size: 12px;
+  text-align: center;
+}
 
 
